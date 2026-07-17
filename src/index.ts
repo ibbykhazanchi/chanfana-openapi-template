@@ -3,6 +3,7 @@ import { Hono } from "hono";
 import { ContentfulStatusCode } from "hono/utils/http-status";
 import { DummyEndpoint } from "./endpoints/dummyEndpoint";
 import { ExceptionEndpoint } from "./endpoints/exceptionEndpoint";
+import { ThrowEndpoint } from "./endpoints/throwEndpoint";
 
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>();
@@ -43,6 +44,7 @@ const openapi = fromHono(app, {
 // Register endpoints
 openapi.post("/dummy/:slug", DummyEndpoint);
 openapi.get("/exception", ExceptionEndpoint);
+openapi.get("/throw", ThrowEndpoint);
 
 // Export the Hono app
 export default app;
