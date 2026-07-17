@@ -25,13 +25,7 @@ export class ExceptionEndpoint extends OpenAPIRoute {
 		try {
 			throw new Error("This is a deliberately created exception");
 		} catch (err) {
-			console.log("Caught exception:", err);
-			console.warn("Caught exception: ", err)
-			console.error("caught exception:, ", err)
-			console.log(err, err, err)
-			console.log(err, "hi", err)
-			console.log({"errorInfo": "hi"})
-			console.log({"errorInfo": "yo"}, err)
+			console.log("caught exception:", err)
 
 			return {
 				success: true,
